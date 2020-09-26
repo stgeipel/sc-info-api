@@ -61,7 +61,6 @@ const Query = objectType({
 const Mutation = objectType({
   name: 'Mutation',
   definition(t) {
-    t.crud.createOneUser({ alias: 'signupUser' })
     t.crud.deleteOnePost()
 
     t.field('createDraft', {

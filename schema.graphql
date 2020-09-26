@@ -6,7 +6,6 @@ type Mutation {
   createDraft(authorEmail: String, content: String, title: String!): Post!
   deleteOnePost(where: PostWhereUniqueInput!): Post
   publish(id: Int): Post
-  signupUser(data: UserCreateInput!): User!
 }
 
 type Post {
@@ -15,17 +14,6 @@ type Post {
   content: String
   id: Int!
   published: Boolean!
-  title: String!
-}
-
-input PostCreateManyWithoutAuthorInput {
-  connect: [PostWhereUniqueInput!]
-  create: [PostCreateWithoutAuthorInput!]
-}
-
-input PostCreateWithoutAuthorInput {
-  content: String
-  published: Boolean
   title: String!
 }
 
@@ -44,10 +32,4 @@ type User {
   id: Int!
   name: String
   posts: [Post!]!
-}
-
-input UserCreateInput {
-  email: String!
-  name: String
-  posts: PostCreateManyWithoutAuthorInput
 }
