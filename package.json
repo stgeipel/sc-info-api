@@ -1,8 +1,8 @@
 {
   "name": "typescript-graphql",
   "scripts": {
-    "start": "node dist/server",
-    "start:heroku": "npm -s run clean && npm -s run generate && tsc && npm start",
+    "start": "npm -s run clean && npm -s run generate && tsc && npm start:builded",
+    "start:builded": "node dist/server",
     "clean": "rm -rf dist",
     "build": "npm -s run clean && npm -s run generate && tsc",
     "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
