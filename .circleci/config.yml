@@ -26,11 +26,11 @@ jobs:
               echo -n .
               sleep 1
             done
-            echo Failed waiting for MySQL && exit 
+            echo Failed waiting for MySQL && exit
 
       - run:
           name: update-npm
-          command: 'sudo npm install -g npm@latest'
+          command: "sudo npm install -g npm@latest"
 
       # - run:
       #     name: Install MySQL CLI
@@ -80,7 +80,7 @@ jobs:
 
       - codecov/upload:
           file: ./coverage/lcov.info
-          token: 7d9b071b-2356-4e51-a477-c787793581d9
+          token: f967310e-c806-457e-8ed7-7db7382c4397
 
 workflows:
   version: 2.1
