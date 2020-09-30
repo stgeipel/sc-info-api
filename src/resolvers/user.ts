@@ -195,24 +195,6 @@ const resolver: Resolvers = {
     },
   },
   User: {
-    notifications: (_, args, { models }): Promise<Notification[]> => {
-      const { Notification: notificationModel } = models;
-
-      return notificationModel.findAll({
-        where: {
-          userId: _.id,
-        },
-      });
-    },
-    posts: (_, args, { models }): Promise<Post[]> => {
-      const { Post: postModel } = models;
-
-      return postModel.findAll({
-        where: {
-          userId: _.id,
-        },
-      });
-    },
   },
 };
 
